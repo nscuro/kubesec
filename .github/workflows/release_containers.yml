@@ -66,7 +66,5 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           file: ${{ matrix.containers.file }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: mode=max,type=local,dest=/tmp/.buildx-cache
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
